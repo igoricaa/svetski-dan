@@ -12,8 +12,8 @@ export default defineType({
       validation: (Rule: any) => Rule.required().min(2).max(50),
     },
     {
-      name: 'country',
-      title: 'Country',
+      name: 'city',
+      title: 'City',
       type: 'string',
       validation: (Rule: any) => Rule.required().min(2).max(50),
     },

@@ -4,7 +4,7 @@ import { getAllMoments, Moment } from '@/sanity/sanity-utils';
 import Image from 'next/image';
 
 export default async function Home() {
-  const moments = await getAllMoments();
+  const moments: Moment[] = await getAllMoments();
 
   return (
     <main>
@@ -12,7 +12,7 @@ export default async function Home() {
         <div className='col-span-full lg:col-span-3 relative sm:w-full aspect-video sm:aspect-auto sm:h-full '>
           <Image
             src='/left.jpg'
-            alt='Moment background'
+            alt='Svetski dan adherence'
             fill
             sizes='100vw'
             className='object-cover'
@@ -21,16 +21,16 @@ export default async function Home() {
         </div>
         <div className='col-span-full lg:col-span-6 text-center space-y-3 pt-4 pb-6 sm:pt-10 sm:pb-12'>
           <p className='text-3xl sm:text-[2.5rem] uppercase text-accent'>
-            This World Adherence Day
+            Svetski dan Adherence
             <br />
-            27/03/2025
+            27.03.2025
           </p>
           <p className='text-6xl sm:text-8xl uppercase font-bold text-accent font-trade-gothic-next'>
-            Share a{' '}
+            Podeli trenutak koji
             <span className='font-trade-gothic-next outlined'>
-              Future Moment
+              želiš da doživiš
             </span>{' '}
-            you want to protect
+            u budućnosti
           </p>
           <p className='text-3xl sm:text-[2.5rem] uppercase text-accent'>
             #Dontmissamoment
@@ -40,7 +40,7 @@ export default async function Home() {
         <div className='col-span-full lg:col-span-3 relative sm:w-full aspect-video sm:aspect-auto sm:h-full '>
           <Image
             src='/right.jpg'
-            alt='Moment background'
+            alt='Svetski dan adherence'
             fill
             sizes='100vw'
             className='object-cover'

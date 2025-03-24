@@ -8,7 +8,7 @@ export async function submitMoment(data: MomentInput) {
     await client.create({
       _type: 'moment',
       name: data.name,
-      country: data.country,
+      city: data.city,
       message: data.message,
     });
 

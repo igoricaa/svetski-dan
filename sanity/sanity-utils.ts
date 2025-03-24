@@ -4,13 +4,13 @@ export interface Moment {
   _id: string;
   _createdAt: string;
   name: string;
-  country: string;
+  city: string;
   message: string;
 }
 
 export interface MomentInput {
   name: string;
-  country: string;
+  city: string;
   message: string;
 }
 
@@ -21,7 +21,7 @@ export const getAllMoments = async () => {
       *[_type == "moment"] | order(_createdAt desc) {
         _id,
         name,
-        country,
+        city,
         message,
         _createdAt
       }
@@ -44,7 +44,7 @@ export const getAllMoments = async () => {
 
 export async function createMoment(data: {
   name: string;
-  country: string;
+  city: string;
   message: string;
 }): Promise<Moment> {
   const response = await client.create({

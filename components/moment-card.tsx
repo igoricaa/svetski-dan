@@ -32,7 +32,7 @@ export function MomentCard({
       </p>
       <Heart className='w-6 h-6 mt-3 sm:mt-4 border-none' fill='red' stroke='red' />
       <p className='text-base sm:text-2xl text-accent uppercase whitespace-nowrap mt-2'>
-        {moment.name} - {moment.country}
+        {moment.name} - {moment.city}
       </p>
     </article>
   );

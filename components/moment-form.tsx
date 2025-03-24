@@ -20,18 +20,18 @@ import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
+    message: 'Polje mora imati najmanje 2 slova.',
   }),
-  country: z.string().min(2, {
-    message: 'Country must be at least 2 characters.',
+  city: z.string().min(2, {
+    message: 'Polje mora imati najmanje 2 slova.',
   }),
   message: z
     .string()
     .min(5, {
-      message: 'Message must be at least 5 characters.',
+      message: 'Polje mora imati najmanje 5 slova.',
     })
     .max(40, {
-      message: 'Message must be less than 40 characters.',
+      message: 'Polje mora imati manje od 40 slova.',
     }),
 });
 
@@ -42,7 +42,7 @@ export default function MomentForm({ className }: { className?: string }) {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
-      country: '',
+      city: '',
       message: '',
     },
   });
@@ -54,12 +54,16 @@ export default function MomentForm({ className }: { className?: string }) {
 
       if (result.success) {
         form.reset();
-        toast.success('Your moment has been submitted!');
+        toast.success('Vaš trenutak je uspešno sačuvan!');
       } else {
-        toast.error('Failed to submit your moment. Please try again.');
+        toast.error(
+          'Greška prilikom pamćenja trenutka. Molimo pokušajte ponovo.'
+        );
       }
     } catch (error) {
-      toast.error('Failed to submit your moment. Please try again.');
+      toast.error(
+        'Greška prilikom pamćenja trenutka. Molimo pokušajte ponovo.'
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -75,7 +79,10 @@ export default function MomentForm({ className }: { className?: string }) {
             render={({ field }) => (
               <FormItem className='relative'>
                 <FormControl>
-                  <InputField placeholder='Share your moment here' {...field} />
+                  <InputField
+                    placeholder='Podeli svoj trenutak ovde'
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage className='text-lg uppercase absolute -bottom-7' />
               </FormItem>
@@ -87,7 +94,10 @@ export default function MomentForm({ className }: { className?: string }) {
             render={({ field }) => (
               <FormItem className='relative'>
                 <FormControl>
-                  <InputField placeholder='Your name' {...field} />
+                  <InputField
+                    placeholder='Upiši svoje ime i prezime'
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage className='text-lg uppercase absolute -bottom-7' />
               </FormItem>
@@ -95,11 +105,11 @@ export default function MomentForm({ className }: { className?: string }) {
           />
           <FormField
             control={form.control}
-            name='country'
+            name='city'
             render={({ field }) => (
               <FormItem className='relative'>
                 <FormControl>
-                  <InputField placeholder='Your country' {...field} />
+                  <InputField placeholder='Upiši svoj grad' {...field} />
                 </FormControl>
                 <FormMessage className='text-base sm:text-lg uppercase absolute -bottom-7' />
               </FormItem>
@@ -113,10 +123,10 @@ export default function MomentForm({ className }: { className?: string }) {
             {isSubmitting ? (
               <>
                 <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-                Submitting...
+                Pamćenje trenutka...
               </>
             ) : (
-              'Share'
+              'Podeli'
             )}
           </Button>
         </form>

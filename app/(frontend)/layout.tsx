@@ -13,7 +13,7 @@ const leagueGothic = League_Gothic({
 const tradeGothicNext = localFont({
   src: [
     {
-      path: '../fonts/trade-gothic-next.woff2',
+      path: '../../fonts/trade-gothic-next.woff2',
       weight: '400',
     },
   ],
@@ -23,7 +23,7 @@ const tradeGothicNext = localFont({
 const bimboFinetip = localFont({
   src: [
     {
-      path: '../fonts/bimbo-finetip.woff2',
+      path: '../../fonts/bimbo-finetip.woff2',
       weight: '400',
     },
   ],
