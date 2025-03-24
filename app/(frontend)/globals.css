@@ -3,7 +3,6 @@
 
 @theme inline {
   --font-bimbo-finetip: var(--font-bimbo-finetip);
-  --font-trade-gothic-next: var(--font-trade-gothic-next);
   --font-league-gothic: var(--font-league-gothic);
 
   --color-main: hsl(var(--main));

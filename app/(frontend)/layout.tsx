@@ -10,16 +10,6 @@ const leagueGothic = League_Gothic({
   weight: '400',
 });
 
-const tradeGothicNext = localFont({
-  src: [
-    {
-      path: '../../fonts/trade-gothic-next.woff2',
-      weight: '400',
-    },
-  ],
-  variable: '--font-trade-gothic-next',
-});
-
 const bimboFinetip = localFont({
   src: [
     {
@@ -43,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${leagueGothic.variable} ${bimboFinetip.variable} ${tradeGothicNext.variable} antialiased`}
+        className={`${leagueGothic.variable} ${bimboFinetip.variable} antialiased`}
       >
         {children}
         <Toaster position='bottom-center' />

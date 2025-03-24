@@ -117,7 +117,7 @@ export default function MomentForm({ className }: { className?: string }) {
           />
           <Button
             type='submit'
-            className='w-fit uppercase bg-accent font-bold text-lg sm:text-xl px-7 sm:px-8 py-6 font-trade-gothic-next cursor-pointer hover:bg-accent-dark transition-colors'
+            className='w-fit uppercase bg-accent font-bold text-lg sm:text-xl px-7 sm:px-8 py-6 cursor-pointer hover:bg-accent-dark transition-colors'
             disabled={isSubmitting}
           >
             {isSubmitting ? (

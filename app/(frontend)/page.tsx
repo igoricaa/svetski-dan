@@ -25,12 +25,9 @@ export default async function Home() {
             <br />
             27.03.2025
           </p>
-          <p className='text-6xl sm:text-8xl uppercase font-bold text-accent font-trade-gothic-next'>
-            Podeli trenutak koji
-            <span className='font-trade-gothic-next outlined'>
-              želiš da doživiš
-            </span>{' '}
-            u budućnosti
+          <p className='text-6xl sm:text-8xl uppercase text-accent'>
+            Podeli trenutak koji{' '}
+            <span className='outlined'>želiš da doživiš</span> u budućnosti
           </p>
           <p className='text-3xl sm:text-[2.5rem] uppercase text-accent'>
             #Dontmissamoment
