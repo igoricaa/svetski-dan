@@ -8,8 +8,8 @@ export default async function Home() {
 
   return (
     <main>
-      <section className='grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-4 bg-main p-4 sm:p-0'>
-        <div className='col-span-full lg:col-span-3 relative sm:w-full aspect-video sm:aspect-auto sm:h-full '>
+      <section className='grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-4 bg-main p-4 lg:p-0'>
+        <div className='col-span-full lg:col-span-3 relative lg:w-full aspect-video lg:aspect-auto lg:h-full '>
           <Image
             src='/left.jpg'
             alt='Svetski dan adherence'
@@ -34,7 +34,7 @@ export default async function Home() {
           </p>
           <MomentForm />
         </div>
-        <div className='col-span-full lg:col-span-3 relative sm:w-full aspect-video sm:aspect-auto sm:h-full '>
+        <div className='col-span-full lg:col-span-3 relative lg:w-full aspect-video lg:aspect-auto lg:h-full '>
           <Image
             src='/right.jpg'
             alt='Svetski dan adherence'
