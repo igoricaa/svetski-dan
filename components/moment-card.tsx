@@ -30,14 +30,14 @@ export function MomentCard({ moment, index, className }: MomentCardProps) {
     };
 
     try {
-      const dataUrl = await toJpeg(cardRef.current, {
+      const dataUrl = await toPng(cardRef.current, {
         pixelRatio: 2,
-        backgroundColor: '#ffffff',
+        skipAutoScale: true,
         filter: filter,
       });
 
       const link = document.createElement('a');
-      link.download = `moment-${moment.name}-${moment.city}.jpg`;
+      link.download = `moment-${moment.name}-${moment.city}.png`;
       link.href = dataUrl;
       document.body.appendChild(link);
       link.click();
@@ -46,8 +46,6 @@ export function MomentCard({ moment, index, className }: MomentCardProps) {
       console.error('Error downloading image:', error);
     }
   };
-
-  const bgImage = `/cards/post-it-${bgImages[index % bgImages.length]}.webp`;
 
   return (
     <article
