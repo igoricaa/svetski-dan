@@ -31,12 +31,12 @@ export function MomentCard({ moment, index, className }: MomentCardProps) {
 
     try {
       const dataUrl = await toPng(cardRef.current, {
-        pixelRatio: 2,
+        // pixelRatio: 2,
+        // backgroundColor:
         skipAutoScale: true,
         filter: filter,
         fetchRequestInit: { cache: 'no-cache' },
-        imagePlaceholder:
-          '/cards/post-it-${bgImages[index % bgImages.length]}.webp',
+        imagePlaceholder: `/cards/post-it-${bgImages[index % bgImages.length]}.webp`,
       });
 
       const link = document.createElement('a');
