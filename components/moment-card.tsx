@@ -20,13 +20,14 @@ export function MomentCard({ moment, index, className }: MomentCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   return (
-    <article
-      ref={cardRef}
-      className={cn('moment-article', className)}
-      style={{
-        backgroundImage: `url(/cards/post-it-${bgImages[index % bgImages.length]}.webp)`,
-      }}
-    >
+    <article ref={cardRef} className={cn('moment-article', className)}>
+      <Image
+        src={`/cards/post-it-${bgImages[index % bgImages.length]}.webp`}
+        alt='post-it'
+        fill
+        sizes='(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw'
+        className='object-cover -z-10'
+      />
       <p className='moment-message'>{moment.message}</p>
       <Image
         src='/cards/heart.png'
