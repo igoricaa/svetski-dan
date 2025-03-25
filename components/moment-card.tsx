@@ -34,6 +34,9 @@ export function MomentCard({ moment, index, className }: MomentCardProps) {
         pixelRatio: 2,
         skipAutoScale: true,
         filter: filter,
+        fetchRequestInit: { cache: 'no-cache' },
+        imagePlaceholder:
+          '/cards/post-it-${bgImages[index % bgImages.length]}.webp',
       });
 
       const link = document.createElement('a');
@@ -46,6 +49,37 @@ export function MomentCard({ moment, index, className }: MomentCardProps) {
       console.error('Error downloading image:', error);
     }
   };
+
+  // const handleDownloadJPG = async () => {
+  //   if (!cardRef.current) return;
+
+  //   const filter = (node: HTMLElement) => {
+  //     const exclusionClasses = ['dlbutton'];
+  //     return !exclusionClasses.some((classname) =>
+  //       node.classList?.contains(classname)
+  //     );
+  //   };
+
+  //   try {
+  //     const dataUrl = await toJpeg(cardRef.current, {
+  //       pixelRatio: 2,
+  //       skipAutoScale: true,
+  //       filter: filter,
+  //       fetchRequestInit: { cache: 'no-cache' },
+  //       imagePlaceholder:
+  //         '/cards/post-it-${bgImages[index % bgImages.length]}.webp',
+  //     });
+
+  //     const link = document.createElement('a');
+  //     link.download = `moment-${moment.name}-${moment.city}.jpg`;
+  //     link.href = dataUrl;
+  //     document.body.appendChild(link);
+  //     link.click();
+  //     document.body.removeChild(link);
+  //   } catch (error) {
+  //     console.error('Error downloading image:', error);
+  //   }
+  // };
 
   return (
     <article
