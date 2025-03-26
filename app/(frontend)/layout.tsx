@@ -53,7 +53,7 @@ export default function RootLayout({
         className={`${leagueGothic.variable} ${bimboFinetip.variable} antialiased`}
       >
         {children}
-        <Toaster position='bottom-center' />
+        <Toaster position='bottom-center' richColors/>
       </body>
     </html>
   );
