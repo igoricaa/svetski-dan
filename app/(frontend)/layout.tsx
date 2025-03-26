@@ -13,7 +13,7 @@ const leagueGothic = League_Gothic({
 const bimboFinetip = localFont({
   src: [
     {
-      path: '../../fonts/bimbo-finetip.woff2',
+      path: '../../fonts/bimbo-finetip.ttf',
       weight: '400',
     },
   ],
